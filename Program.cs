@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafío_02_3
+namespace Desafío_02_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ingrese los datos z, c:");
+            Console.WriteLine("Ingrese los datos t, a:");
 
-            double z = double.Parse(Console.ReadLine());
-            double cGrados = double.Parse(Console.ReadLine());
-            double c = (cGrados * Math.PI) / 180;
+            double t = double.Parse(Console.ReadLine());
+            double aGrados = double.Parse(Console.ReadLine());
+            double a = (aGrados * Math.PI) / 180;
 
-            double t = (z / Math.Sin(c));
-            double y = (t * Math.Cos(c));
-            double a = (180 - 90 - cGrados);
+            double y = (t * Math.Sin(a));
+            double z = (t * Math.Cos(a));
+            double c = (180 - 90 - aGrados);
 
-            Console.WriteLine("t es igual a:" + t);
             Console.WriteLine("y es igual a:" + y);
-            Console.WriteLine("a es igual a:" + a);
+            Console.WriteLine("z es igual a:" + z);
+            Console.WriteLine("c es igual a:" + c);
         }
     }
 }
