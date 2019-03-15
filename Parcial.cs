@@ -26,11 +26,7 @@ class Parcial {
         //--------------------------------------------
         //- Abajo de esta línea va su código ---------
  
-        for(int i = 0; i < notas.Length; i++) {
-            if ( notas[i]<= 3) {
-                salida++;
-            }
-        }
+
 
         //- Arriba de esta línea va su código --------
 
@@ -47,23 +43,6 @@ class Parcial {
         //--------------------------------------------
         //- Abajo de esta línea va su código ---------
 
-        for (int i = 0; i < notas.Length-1; i++) {
-            for(int y = 0; y < notas.Length - 1; y++) {
-                if(notas[y] > notas[y + 1]) {
-                    double tmp = notas[y + 1];
-                    notas[y + 1] = notas[y];
-                    notas[y] = tmp;
-
-                    string tmp2 = nombres[y + 1];
-                    nombres[y + 1] = nombres[y];
-                    nombres[y] = tmp2;
-                }
-            }
-        }
-
-        for(int i = 0; i< salida.Length; i++) {
-            salida[i] = nombres[i];
-        }
 
 
         //- Arriba de esta línea va su código --------
@@ -76,28 +55,12 @@ class Parcial {
         names.CopyTo(nombres, 0);
         double[] notas = new double[data.Length];
         data.CopyTo(notas, 0);
-        int tamaño = 0;
-        int counter = 0;
- 
+        string[] salida = new string[0];
 
         //--------------------------------------------
         //- Abajo de esta línea va su código ---------
 
-        for (int i = 0; i < notas.Length; i++) {
-            if (notas[i] < 3) {
-                tamaño += 1;
-            }
-        }
-        Console.WriteLine("Tamaño " + tamaño);
 
-
-        string[] salida = new string[tamaño];
-        for (int i = 0; i < notas.Length; i++) {
-            if(notas[i] < 3) {
-                salida[counter] = nombres[i];
-                counter++;
-            }
-        }
 
         //- Arriba de esta línea va su código --------
 
@@ -109,10 +72,35 @@ class Parcial {
         names.CopyTo(nombres, 0);
         double[] notas = new double[data.Length];
         data.CopyTo(notas, 0);
-        string[] salida = new string[0];
+        int counter = 0;
+        string[] NombreA = new string[nombres.Length];
+
+
+
+
 
         //--------------------------------------------
         //- Abajo de esta línea va su código ---------
+        for (int i = 0; i < nombres.Length; i++)
+        {
+            string nombreComparado = nombres[i];
+            for (int y = 0; y < nombres[i].Length; y++)
+            {
+                char letras = nombreComparado[y];
+                if (letras == 'A')
+                {
+                    NombreA[counter] = nombres[i];
+                    counter++;
+                    break;
+                    
+                }
+            }
+        }
+        string[] salida = new string[counter];
+        for (int i = 0; i < salida.Length; i++)
+        {
+            salida[i] = NombreA[i];
+        }
 
 
 
